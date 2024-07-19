@@ -23,7 +23,16 @@ if ($target_month == 4 || $target_month == 6 || $target_month == 9 || $target_mo
 }
 elseif ($target_month == 2) 
 {
-  if (($target_year % 4) == 0) {
+  if (($target_year % 100) == 0)
+  {
+    if (($target_year % 400) == 0) {
+      $ending_day = 29;
+    }
+    else {
+      $ending_day = 28;
+    }
+  }
+  elseif (($target_year % 4) == 0) {
     $ending_day = 29;
   }
   else {
