@@ -1,7 +1,7 @@
 <?php
 //create standard calendar "grid" (Sunday to Saturday) for a month (default: current month)
 
-//default for year and month - make your own changes to handle all cases
+//default for year and month - make your own changes to handle all boundary cases and exceptions
 $target_year = date("Y");
 $target_month = date("n");
 
@@ -43,7 +43,7 @@ else {
   $ending_day = 31;
 }
 //fill calendar grid up to "ending day"
-for ($j = 1; $j <= $ending_day; $j ++) {
+for ($j = 1; $j < $ending_day; $j ++) {
   $calendar_data[] = $j;
 }
 $end_day = date("D", strtotime("$target_year-$target_month-$ending_day"));
