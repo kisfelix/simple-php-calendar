@@ -43,7 +43,7 @@ else {
   $ending_day = 31;
 }
 //fill calendar grid up to "ending day"
-for ($j = 1; $j < $ending_day; $j ++) {
+for ($j = 1; $j <= $ending_day; $j ++) {
   $calendar_data[] = $j;
 }
 $end_day = date("D", strtotime("$target_year-$target_month-$ending_day"));
